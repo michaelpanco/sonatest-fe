@@ -1,13 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import "./output.css";
+import App from "./App";
+import AuthCallback from "./AuthCallback";
+import Contacts from "./Contacts";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}></Route>
+        <Route path="/auth-callback" element={<AuthCallback />}></Route>
+        <Route path="/contacts" element={<Contacts />}></Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
